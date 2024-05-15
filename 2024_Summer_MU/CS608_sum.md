@@ -55,15 +55,57 @@ Testing for specification: does the tested code generate correct results?
 
 ### Decision Table
 
-<!-- TODO: Week 4 -->
+1. **Analysis**: Create boolean expressions for each non-error partition
+   1. Identify the boolean expressions
+   1. Fill decision table
+   1. Remove impossible columns
+   1. Fill effect / return value
+   1. Verify each rule
+1. **Identify Test Coverage Items**: Each rule is a TCI
+1. **Identify Test Cases**: Each rule has a candidate test case, duplicates get removed
+1. **Test Design Verification**: Fill TCI table, check for duplicates, every TC covers at least 1 TCI
+
+### Examples
+
+![Decision Table](CS608_media/DT.png)
+
+![DT TC](CS608_media/DT_TC.png)
+
+![DT TCI](CS608_media/DT_TCI.png)
 
 ## White Box Testing
 
 Testing the implementation: do valid results get generated when executed?
 
-### SC
+### Statement Coverage
 
-### BC
+1. **Analysis**: Run existing tests, check JaCoCo coverage report for missed statements
+1. **Identify Test Coverage Items**: Create TCI to reach uncovered statement
+1. **Identify Test Cases**: Create TC for every TCI
+1. **Test Design Verification**: Complete TCI table, remove duplicates, every TCI must cover at least 1 TC
+
+### Examples
+
+![SC Coverage Report](CS608_media/SC_Coverage.png)
+
+![SC Uncovered Statement](CS608_media/SC_Statement.png)
+
+![SC TC](CS608_media/SC_TC.png)
+
+![SC TCI](CS608_media/SC_TCI.png)
+
+### Branch Coverage
+
+1. **Analysis**: Run existing Tests, check JaCoCo report for missed branches
+1. **Continue as with Statement Coverage**
+
+### Examples
+
+![BC Coverage Report](CS608_media/BC_Coverage.png)
+
+![BC Uncovered Statement](CS608_media/BC_Branch.png)
+
+> After implementing Statement an Branch Coverage Tests check JaCoCo report!
 
 ## Object Oriented Testing
 
