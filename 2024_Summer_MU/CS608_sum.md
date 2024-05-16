@@ -109,9 +109,59 @@ Testing the implementation: do valid results get generated when executed?
 
 ## Object Oriented Testing
 
+Refers to testing methods in the context of their class, as methods interact with each other.
+
+1. **Analysis**: Categorize class methods, select testing technique
+   1. _Static methods_: usually no testing (?)
+   1. _Constructors_: Test attribute initialization
+   1. _Accessor methods_: Only test if they have more than a single assignment / return statement
+   1. _Methods with no class interaction_: Test using non-OO techniques
+   1. _Methods with class interaction_: Test all of these
+1. **Identify Test Coverage Items**: All methods to test, including in- and outputs and euqivalence partitions
+1. **Identify Test Cases**: TC for each TCI, consists of multiple method calls
+1. **Test Design Verification**: All TCIs covered, no duplicates
+
+## Examples
+
+### Analysis
+
+![OO Analysis Constructor](CS608_media/OO_Analysis_Constructor.png)
+![OO Analysis Accessor](CS608_media/OO_Analysis_Accessors.png)
+![OO Analysis Method](CS608_media/OO_Analysis_Methods.png)
+
+### TCs / TCIs
+
+![OO TC](CS608_media/OO_TC.png)
+
+![OO TCI](CS608_media/OO_TCI.png)
+
 ## Application Testing
 
+1. **Analysis**: Identification of site structure
+   1. Analyze different screens
+   1. Analyze user interface elements on each screen
+   1. Analyze how input and output data is represented
+1. **Identify Test Coverage Items**: Each user story with each acceptance criterion, select suitable values
+1. **Identify Test Cases**: each TCI has one TC that checks the output
+1. **Test Design Verification**: Review each test case to its user story / acceptance criterion
+1. **Test Implementation**: Something like Selenium can be used for web app interaction
+
+### Analysis
+
+![AT HTML](CS608_media/AT_HTML.png)
+
+### TCs / TCIs
+
+![OO TC Overview](CS608_media/AT_TC_Overview.png)
+![OO TC Process](CS608_media/AT_TC_Process.png)
+
+![OO TCI](CS608_media/AT_TCI.png)
+![OO TCI Values](CS608_media/AT_TCI_Values.png)
+
 ## Test Automation
+
+Can be achived through different frameworks.
+Usually tests get run on every pull / merge request through the use of a CI pipeline.
 
 ## Random testing
 
