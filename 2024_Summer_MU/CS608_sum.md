@@ -163,18 +163,26 @@ Refers to testing methods in the context of their class, as methods interact wit
 Can be achived through different frameworks.
 Usually tests get run on every pull / merge request through the use of a CI pipeline.
 
+## Path Testing
+
+1. **Analysis**: Identify all possible paths through the application, remove logically impossible paths
+1. **Test Cases and Coverage Items as in other black- and whitebox testing techniques**
+
 ## Random testing
 
 A large number of inputs gets selected randomly, approximates to exhausive testing.
+Exercises program, demonstrates that it does not crash.
 
-- Exercises program, demonstratest that it does not crahs
-- Poor distribution of inputs, as it doesn't respect partitions
-- Can't tell if results are correct -> too many test
+3 Problems:
 
-1. **Analysis**:
-1. **Identify Test Coverage Items**:
-1. **Identify Test Cases**:
-1. **Test Design Verification**:
-1. **Test Implementation**:
-1. **Test Execution**:
-1. **Review Test Results**:
+- **Test Completion Problem**: No information on how many tests are needed
+- **Test Data Problem**: Poor distribution of inputs, as it doesn't respect partitions
+- **Test Oracle Problem**: Can't tell if results are correct -> too many test
+
+Proceed as with Equivalence Partitions, but take random values for partitions:
+
+1. **Identify Test Cases**: Random input between boundaries of value
+
+![RT TC](CS608_media/RT_TC.png)
+
+1. **Test Design Verification**: If test fails, break and report error
