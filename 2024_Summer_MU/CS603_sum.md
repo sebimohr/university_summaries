@@ -4,6 +4,8 @@
 
 **Verification** is the proof, that the program is working mathematically correct.
 
+<!-- TODO: Real world examples of Verification -->
+
 ## Design by Contract
 
 Every publicly accessible method defines pre- and postconditions.
@@ -33,7 +35,7 @@ This means:
 - The **postconditions** of an overridden method must be the **same or stronger** than the super methods
 - The **class invariant** can be the **same or stronger** as the superclass ones
 
-## Hoare Logic
+### Hoare Logic
 
 Hoare Triple:
 
@@ -55,9 +57,53 @@ Procedure:
     - **only true when in loop**
 - in if/else: every branch has a guard that holds in the branch itself
 
-> Termination has to be proven for total correctness!
+> For **total correctness** termination has to be proven !
 
-## Topics to add
+## Model checking
 
-- Dafny
-- Spin
+<!-- TODO: Difference Model Checking vs. Hoare Logic / Design by contract -->
+
+### Kripke structure
+
+A Kripke structure consists of a 4-tuple:
+
+$$
+M = (S, S_0, R, L)
+$$
+
+- $S$ is a set of states
+- $S_0 \subseteq S$ is a set of the initial states
+- $R \subseteq S \times S$ are the transitions allowed for each state
+- $L$ gives the set of propositions allowed in each state
+
+Higher-level language models (e.g. Promela) can be translated to Kripke structures.
+
+![Model Checking Big Picture](./CS603_media/MC.png)
+
+### LTL - Linear Temporal Logic
+
+Connection of atomic propositions through boolean and temporal operators.
+
+- Boolean connectives:
+  - NOT: $\lnot$
+  - AND: $\land$
+  - OR: $\lor$
+  - Implies: $\implies$
+  - Equivalence: $\iff$
+- Temporal operators:
+  - Next: $X$ = holds in next state
+  - Globally / Always: $G$ = holds always
+  - Finally / Eventually: $F$ = holds sometime in the future
+  - Until: $U$ = x holds until y holds, y will eventually hold
+
+### CTL - Computational Temporal Logic
+
+<!-- TODO -->
+
+## Spin
+
+![SPIN Model](./CS603_media/SPIN.png)
+
+## Event-B
+
+<!-- TODO -->
