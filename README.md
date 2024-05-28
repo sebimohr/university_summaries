@@ -5,14 +5,27 @@ This repository holds summaries for various subjects I visited when going to uni
 Please note that they may be outdated.
 
 - **OTH Regensburg 2018 - 2023**: BSc Computer Science
-   - 2019_Winter: Kommunikatonssysteme, Operating Systems
-   - 2020_Summer: Computerarithmetik & Rechenverfahren, Rechnertechnik
-   - 2021_Summer: Computergrafik, Data Warehouse, Software Engineering, Verteilte Systeme
-   - 2021_Winter: Informationssicherheit
-- **OTH Regensburg 2023 - 2025**: MSc Computer Science
-   - 2023_Summer: Moderne Theoretische Informatik, Spezielle Algorithmen
-- **Maynooth University 2024**: Erasmus Exchange Semester, MSc Software Engineering
-   - 2024_Summer_MU: Rigorous Process, Software Testing, Internet Solutions Engineering
+   - 03_Semester:
+      - Kommunikatonssysteme
+      - Operating Systems
+   - 04_Semester:
+      - Computerarithmetik & Rechenverfahren
+      - Rechnertechnik
+      - Software Engineering
+   - 06_Semester:
+      - Computergrafik
+      - Data Warehouse
+      - Verteilte Systeme
+      - Informationssicherheit
+- **OTH Regensburg 2023 - 2025**: MSc Software Engineering
+   - 01_Semester:
+      - Moderne Theoretische Informatik
+      - Spezielle Algorithmen
+   - 02_Semester:
+- **Maynooth University 2024**: MSc Software Engineering (Erasmus Exchange Semester)
+   - Rigorous Process
+   - Software Testing
+   - Internet Solutions Engineering
 
 >The lecture summaries in this repository are provided for educational purposes only.
 >I do not claim ownership of the information contained within them.
