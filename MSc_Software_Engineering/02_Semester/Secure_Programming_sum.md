@@ -35,11 +35,19 @@ error messages must only reveal the needed information
 Software configuration parameters have to be protected from manipulation
 
 **Sequence and timing requirements**:
-Design flaws in timing or sequencing can lead to race conditions or check / time of use attacks.
+Design flaws in timing or sequencing can lead to race conditions or check / time of use attacks
+
+**Archiving requirements**:
+Exist for reasons of business continuity or as a regulatory requirement
+
+**Deployment environment requirements**:
+Might affect security requirements
 
 ### Protection Strategies
 
 ### Security Design Principles
+
+> p. 23
 
 ## Initialization
 
