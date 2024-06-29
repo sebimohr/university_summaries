@@ -22,6 +22,7 @@ Please note that they may be outdated.
       - Moderne Theoretische Informatik
       - Spezielle Algorithmen
    - 02_Semester:
+      - Secure Programming
 - **Maynooth University 2024**: MSc Software Engineering (Erasmus Exchange Semester)
    - Rigorous Process
    - Software Testing
