@@ -47,9 +47,25 @@ Might affect security requirements
 
 ### Security Design Principles
 
-> p. 23
+![Security Design Principles](SPG_media/1_Security_Design_Principles.png)
+
+- **Least Privilege**: grant only minimum necessary rights needed for the shortest duration possible
+- **Seperation of duties**: prevent fraud and errors by dividing tasks and privileges for specific business processes
+- **Defense in depth**: layer security defenses
+- **Fail secure**: When a system fails, make it fail securely
+- **Economy of mechanism**: highly complex sytems are more likely to have security vulnerabilities
+- **Complete mediation**: require access checks each time a subject requests access to an object
+- **Open design**: security shouldn't depend on the design but on keys and passwords
+- **Least common mechanism**: avoid having multiple subjects sharing mechanisms to grant access to a resource
+- **Psychological acceptability**: Resources should still be easily accessible to prevent users
+  from disabling security mechanisms
+- **Leveraging existing components**: reuse existing components to decrease the introduction of new vulnerabilities
+- **Weakest link**: Attackers are more likely to attack weak spots than fortified components
+- **Single point of failure**: a _SPOF_ can make the application unavailable, can be avoided by using redundancy
 
 ## Initialization
+
+<!-- 2-initialization -->
 
 ## Input Validation
 
