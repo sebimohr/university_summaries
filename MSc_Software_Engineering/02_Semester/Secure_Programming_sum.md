@@ -67,6 +67,38 @@ Might affect security requirements
 
 <!-- 2-initialization -->
 
+### Windows
+
+![Windows Security Descriptor](SPG_media/2_windows_security_descriptor.png)
+
+- **SID**: system wide unique security ID
+- **DACL**: discretionary ACL = list of ACEs (Access Control Elements with allow/deny)
+- **SACL**: system ACL, specifies operations to log and audit
+
+#### Privilege Restriction in Windows through Access Tokens
+
+Every thread / process started in the user context has a copy of the access token that's been created after user login.
+Processes that shouldn't be able to access some functionality only get required rights / restricted tokens that
+have been created through the `CreateRestrictedToken` function:
+
+- removes privileges from a token
+- applies the _deny-only_ attribute to SIDs
+- specifies a list of restricting SIDs
+
+_Access Tokens_ contain:
+
+- Security identifier (SID) of the user & user groups
+- SID of logon session
+- list of privileges
+- owner SID
+- TSID for primary group
+- default DACL
+- access token source
+- access token primary or impersonation
+- optional list of restricting SIDs
+- impersonation levels
+- statistics
+
 ## Input Validation
 
 ## Randomness
