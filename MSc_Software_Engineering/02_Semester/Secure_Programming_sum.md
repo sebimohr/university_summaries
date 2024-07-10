@@ -43,8 +43,6 @@ Exist for reasons of business continuity or as a regulatory requirement
 **Deployment environment requirements**:
 Might affect security requirements
 
-### Protection Strategies
-
 ### Security Design Principles
 
 ![Security Design Principles](SPG_media/1_Security_Design_Principles.png)
@@ -65,7 +63,23 @@ Might affect security requirements
 
 ## Initialization
 
-<!-- 2-initialization -->
+### Safe Initialization / System Environment
+
+_Environment variables_ can be accessed by written code and potentially be misused / introduce security flaws.
+
+_Solution_: Sanitzing **PATH** and **IFS** variables.
+
+- **PATH**: locate executables in the system
+  - never include relative paths
+  - force the setting of the PATH environment variable to only needed values
+- **IFS**: used by many shells to determine which character seperates command-line arguments
+  - should be set to something sane (e.g. space, tab, newline)
+
+### Authorization on Windows
+
+#### Access Management
+
+Windows manages access rights in an _Access Control List_ saved in security-descriptors in the _Master File Table_
 
 ### Windows
 
