@@ -115,6 +115,40 @@ _Access Tokens_ contain:
 
 ## Input Validation
 
+Safe assumptions are essential:
+
+- input is guilty until proven otherwise
+- prefer rejecting data to filtering data
+- policy decisions based on a "default deny" rule
+- do not accept commands from the user unless you parse them yourself
+- perform data validation at input points and component level
+
+### Rules of Input Validation
+
+1. **Define what you expect**:
+   What Purpose, Format, Size for the requested input, which conversion is done?
+1. **Canonicalize (Seperation of Concerns)**
+1. **Check that input meets expectations**
+1. **Manipulate input or drop it if expectations aren't met**
+
+### Input Validation Problems
+
+#### URL
+
+1. **Unsafe character encoding**:
+   Multiple encoding of unsafe characters may lead to ambiguities (Mehrdeutigkeit) in URLs -
+   this can lead to potentially undefined states.
+1. **NULL-termination of C-strings**:
+   can be encoded anywhere in the URL #
+
+#### Strings
+
+Common Errors:
+
+- unbounded stream from stdin $\rightarrow$ limit size
+- unbounded string copy and concatenation $\rightarrow$ dynamic allocation
+- extracting characters from `cin` into character array $\rightarrow$ use maximum buffer size
+
 ## Randomness
 
 ## Symmetric & Asymmetric Encryption
