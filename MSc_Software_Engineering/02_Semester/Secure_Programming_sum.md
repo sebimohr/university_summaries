@@ -148,8 +148,77 @@ Common Errors:
 - unbounded stream from stdin $\rightarrow$ limit size
 - unbounded string copy and concatenation $\rightarrow$ dynamic allocation
 - extracting characters from `cin` into character array $\rightarrow$ use maximum buffer size
+- writing exactly as many characters than space causes buffer overflow, because strings are null-terminated in C (`\0`)
+
+When more data is written than allowed:
+
+- saved EBP and return address are overwritten (in C and C++)
+  ![Input Validation - Strings](SPG_media/4_Input_Validation_Strings.png)
+- return address can be modified to point to a malicious program or just destroyed to produce DOS (Denial of service)
+
+Solutions:
+
+- **Canaries**:
+  ![IP - Canary](SPG_media/4_Input_Validation_Strings_Canaries.png)
+  - _canary_ value at the end of allocated memory
+  - when destoryed $\rightarrow$ buffer overflowed
+  - _BUT_: DOS still working
+- **Bounds checking**:
+  - compiler-based technique
+  - adds run-time bounds information for each allocated block of memory
+  - checks pointers against run-time bounds during run-time
+- **AddressSanitizer**: (implemented in clang or gcc)
+  - detects all kinds of memory-corruption bugs
+  - Downside: performance overhead
+  - checks for example: heap use after rfree, heap and stack buffer-overflow
+- **OS-based-defenses**:
+  - Non-executable stack
+    - mark data in stack as non-executable
+  - Adress-Space-Layer-Randomization (Unix and Win)
+    - randomize address space
+    - addresses can only be guessed
+  - Sandboxes and compartment based OS extensions
+    - execute vulnerable components in protected areas
+
+Also always use safe options during coding:
+
+- `printf(string)` $\rightarrow$ `printf("%s", string)`
+- `fprintf(stderr, string)` $\rightarrow$ `fprintf(,stderr, "%s", string)`
+- `snprintf(puffer, sizeof(puffer), string)` $\rightarrow$ `snprintf(puffer, sizeof(puffer), "%s", string)`
+
+#### Integer
+
+Errors:
+
+- Integer Overflow
+- Sign Errors (Signed or Unsigned)
+- Truncation Errors (Kürzungsfehler)
+
+Mitigation strategies:
+
+- Range checking
+- Strong typing
+- Compiler options
+- Arbitrary precision arithmetic
+  - GNU Multiple Preciison Arithmetic Library (GMP)
+  - Java BigInteger
+
+#### Additional Topics - Input Validation
+
+- Validating Email-Addresses
+  - check against RFC 822
+- Cross Site Scripting
+  - Refuse to accept anything that look like HTML
+  - Escape special characters
+- SQL-Injection
+  - Restrict user input to the smallest character set possible, refuse anything else
+  - Escape character that have special significace to SQL (f.e. `;`, `=`, `""`)
+
+> **ALWAYS**: default deny
 
 ## Randomness
+
+<!-- 5 -->
 
 ## Symmetric & Asymmetric Encryption
 
