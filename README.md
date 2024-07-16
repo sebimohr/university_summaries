@@ -28,8 +28,7 @@ Please note that they may be outdated.
    - Software Testing
    - Internet Solutions Engineering
 
->The lecture summaries in this repository are provided for educational purposes only.
->I do not claim ownership of the information contained within them.
->If the original owner requests removal, I will promptly take them down.
->Additionally, please note that I do not guarantee the completeness or accuracy of these summaries.
-
+> The lecture summaries in this repository are provided for educational purposes only.
+> I do not claim ownership of the information contained within them.
+> If the original owner requests removal, I will promptly take them down.
+> Additionally, please note that I do not guarantee the completeness or accuracy of these summaries.
