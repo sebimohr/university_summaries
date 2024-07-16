@@ -4,8 +4,6 @@
 
 **Verification** is the proof, that the program is working mathematically correct.
 
-<!-- TODO: Real world examples of Verification -->
-
 ## Design by Contract
 
 Every publicly accessible method defines pre- and postconditions.
@@ -49,12 +47,12 @@ Procedure:
 
 - down-to-top: Postcondition must lead to precondition when executing all statements
 - in loops:
-  - **loop Guard** (Abbruchbedingung) must be true in loop, after loop $\neg$ guard must be true
-  - **loop Invariant** is true:
-    - before loop
-    - begin of every loop execution
-    - end of every loop execution
-    - **only true when in loop**
+   - **loop Guard** (Abbruchbedingung) must be true in loop, after loop $\neg$ guard must be true
+   - **loop Invariant** is true:
+      - before loop
+      - begin of every loop execution
+      - end of every loop execution
+      - **only true when in loop**
 - in if/else: every branch has a guard that holds in the branch itself
 
 > For **total correctness** termination has to be proven !
@@ -99,16 +97,16 @@ Higher-level language models (e.g. Promela) can be translated to Kripke structur
 Connection of atomic propositions through boolean and temporal operators.
 
 - Boolean connectives:
-  - NOT: $\lnot$
-  - AND: $\land$
-  - OR: $\lor$
-  - Implies: $\implies$
-  - Equivalence: $\iff$
+   - NOT: $\lnot$
+   - AND: $\land$
+   - OR: $\lor$
+   - Implies: $\implies$
+   - Equivalence: $\iff$
 - Temporal operators:
-  - Next: $X$ = holds in next state
-  - Globally / Always: $G$ = holds always
-  - Finally / Eventually: $F$ = holds sometime in the future
-  - Until: $U$ = x holds until y holds, y will eventually hold
+   - Next: $X$ = holds in next state
+   - Globally / Always: $G$ = holds always
+   - Finally / Eventually: $F$ = holds sometime in the future
+   - Until: $U$ = x holds until y holds, y will eventually hold
 
 > Generally defines a set of runs of a concurrent system, rather than a single instance of a run.
 
@@ -117,8 +115,8 @@ Connection of atomic propositions through boolean and temporal operators.
 Connection of temporal operators with path quantifiers:
 
 - Path quantifier:
-  - On all paths: $A$
-  - Exists one path: $E$
+   - On all paths: $A$
+   - Exists one path: $E$
 
 Path Notation:
 

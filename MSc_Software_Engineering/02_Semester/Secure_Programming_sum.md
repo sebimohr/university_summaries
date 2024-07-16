@@ -70,10 +70,10 @@ _Environment variables_ can be accessed by written code and potentially be misus
 _Solution_: Sanitzing **PATH** and **IFS** variables.
 
 - **PATH**: locate executables in the system
-  - never include relative paths
-  - force the setting of the PATH environment variable to only needed values
+   - never include relative paths
+   - force the setting of the PATH environment variable to only needed values
 - **IFS**: used by many shells to determine which character seperates command-line arguments
-  - should be set to something sane (e.g. space, tab, newline)
+   - should be set to something sane (e.g. space, tab, newline)
 
 ### Authorization on Windows
 
@@ -160,25 +160,25 @@ Solutions:
 
 - **Canaries**:
   ![IP - Canary](SPG_media/4_Input_Validation_Strings_Canaries.png)
-  - _canary_ value at the end of allocated memory
-  - when destoryed $\rightarrow$ buffer overflowed
-  - _BUT_: DOS still working
+   - _canary_ value at the end of allocated memory
+   - when destoryed $\rightarrow$ buffer overflowed
+   - _BUT_: DOS still working
 - **Bounds checking**:
-  - compiler-based technique
-  - adds run-time bounds information for each allocated block of memory
-  - checks pointers against run-time bounds during run-time
+   - compiler-based technique
+   - adds run-time bounds information for each allocated block of memory
+   - checks pointers against run-time bounds during run-time
 - **AddressSanitizer**: (implemented in clang or gcc)
-  - detects all kinds of memory-corruption bugs
-  - Downside: performance overhead
-  - checks for example: heap use after rfree, heap and stack buffer-overflow
+   - detects all kinds of memory-corruption bugs
+   - Downside: performance overhead
+   - checks for example: heap use after rfree, heap and stack buffer-overflow
 - **OS-based-defenses**:
-  - Non-executable stack
-    - mark data in stack as non-executable
-  - Adress-Space-Layer-Randomization (Unix and Win)
-    - randomize address space
-    - addresses can only be guessed
-  - Sandboxes and compartment based OS extensions
-    - execute vulnerable components in protected areas
+   - Non-executable stack
+      - mark data in stack as non-executable
+   - Adress-Space-Layer-Randomization (Unix and Win)
+      - randomize address space
+      - addresses can only be guessed
+   - Sandboxes and compartment based OS extensions
+      - execute vulnerable components in protected areas
 
 Also always use safe options during coding:
 
@@ -200,19 +200,19 @@ Mitigation strategies:
 - Strong typing
 - Compiler options
 - Arbitrary precision arithmetic
-  - GNU Multiple Preciison Arithmetic Library (GMP)
-  - Java BigInteger
+   - GNU Multiple Preciison Arithmetic Library (GMP)
+   - Java BigInteger
 
 #### Additional Topics - Input Validation
 
 - Validating Email-Addresses
-  - check against RFC 822
+   - check against RFC 822
 - Cross Site Scripting
-  - Refuse to accept anything that look like HTML
-  - Escape special characters
+   - Refuse to accept anything that look like HTML
+   - Escape special characters
 - SQL-Injection
-  - Restrict user input to the smallest character set possible, refuse anything else
-  - Escape character that have special significace to SQL (f.e. `;`, `=`, `""`)
+   - Restrict user input to the smallest character set possible, refuse anything else
+   - Escape character that have special significace to SQL (f.e. `;`, `=`, `""`)
 
 > **ALWAYS**: default deny
 

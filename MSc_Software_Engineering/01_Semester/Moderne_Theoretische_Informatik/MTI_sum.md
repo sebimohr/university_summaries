@@ -14,7 +14,8 @@ Folgende Probleme existieren in NP:
 
 ### Reduzierbarkeit von NP-Probleme
 
-Probleme sollen aufeinander reduzierbar sein, heißt: Problem A & B existieren, Lösung für Problem B existiert, Eingabe von A wird auf Eingabe von B abgebildet $ \rightarrow $ Lösung für A gefunden:
+Probleme sollen aufeinander reduzierbar sein, heißt: Problem A & B existieren, Lösung für Problem B existiert,
+Eingabe von A wird auf Eingabe von B abgebildet $ \rightarrow $ Lösung für A gefunden:
 $ A \leq_p B $
 
 #### NP-Vollständigkeit
@@ -57,7 +58,8 @@ Alle Probleme von NP, die weder in P, noch in NPC enthalten sind, nennt man __NP
 
 ### Min-Cut
 
-__Definition__: ungerichteter, ungewichteter Graph soll in zwei Teile aufgespalten werden, so dass möglichst wenige Kanten durchtrennt werden.
+__Definition__: ungerichteter, ungewichteter Graph soll in zwei Teile aufgespalten werden,
+so dass möglichst wenige Kanten durchtrennt werden.
 
 __Karger'scher Algorithmus__:
 
@@ -80,7 +82,8 @@ __Ereignisse:__ Menge $F$ aller erlaubten Ereignisse, jedes Ereignis $F_i$ hat e
 
 ### Probabilistische Methode
 
-Probabilistische Methode liefert Existenzbeweis für Objekte mit bestimmten Eigenschaften. Wenn die Wahrscheinlichkeit für die Wahl eines Objekts aus einem Ereignisraum > 0 ist, existiert das Objekt.
+Probabilistische Methode liefert Existenzbeweis für Objekte mit bestimmten Eigenschaften.
+Wenn die Wahrscheinlichkeit für die Wahl eines Objekts aus einem Ereignisraum > 0 ist, existiert das Objekt.
 
 Vorgehensweise:
 
