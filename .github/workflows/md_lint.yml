@@ -1,0 +1,17 @@
+name: Markdown Lint Workflow
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  markdown_lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.7
+
+      - name: Run Markdown Linting
+        uses: articulate/actions-markdownlint@v1.1.0
