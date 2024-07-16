@@ -15,3 +15,5 @@ jobs:
 
       - name: Run Markdown Linting
         uses: articulate/actions-markdownlint@v1.1.0
+        with:
+          config_file: ./md_lint.json
