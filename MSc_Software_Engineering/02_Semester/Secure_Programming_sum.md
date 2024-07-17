@@ -245,8 +245,8 @@ Security issues with randomness:
 - Special case: virtual machines
    - source of entropy (Informationsdichte) not under control
 
->Encryption needs a key of _good_ randomness.
->Non randomness of RNG create most weaknesses of encryption.
+> Encryption needs a key of _good_ randomness.
+> Non randomness of RNG create most weaknesses of encryption.
 
 ### Possible RNGs
 
@@ -269,6 +269,56 @@ Security issues with randomness:
 - Quantum RNGs
    - quantum mechanical random processes to generate random numbers
 
-## Symmetric & Asymmetric Encryption
+## Encryption Techniques
+
+**Kerckhoff-Principle**: Quality of Cipher is only dependent on the quality of the secret.
+
+### Symmetric Encryption
+
+Symmetric encryption by using a single key for encrypition and decryption.
+
+![Private-Key Encryption](SPG_media/6_Private_Key_Encryption.png)
+
+Cipher Types:
+
+- **Stream ciphers**:
+  Substitute data bit by bit or byte by byte with pseudo-random data (_SNOW 2.0_, _MUGI_)
+- **Block ciphers**:
+  Encrypting fixed size chunks of data (_AES_)
+
+> General recommendation: always use **AES**
+
+Key length should be _128+bit_ - secure enough for a long time.
+If RNG isn't trusted, longer keys have more entropy and are therefore more secure (but slower).
+
+Current Cipher mode of choice is **GCM** (RFC 4106), recommended by _NIST_ and offering integrity.
+
+#### Integrity through hashing
+
+To add integrity to a message, add message hash to communication. Receiver decrypts message and creates hash
+$\rightarrow$ when hashes match, message wasn't changed
+
+Requirement for hash-functions:
+
+- **One-wayness**: can't compute plaintext value from generated hash
+- **Noncorrelation**: Input bits and output bits shouldn't correlate
+- **Collision resistance**: should be infeasible to find two plaintext values that produce (roughly) the same hash
+
+>Recommended hashing algorithm: **SHA (256+)**
+
+##### MAC - Message authentication codes
+
+Hash functions that take a message and a secret key as input.
+The output can only be produced whithout posessing the secret key.
+
+![MAC](SPG_media/6_MAC.png)
+
+Possible MACs: OMAC, CMAC, HMAC
+
+### Asymmetric Encryption
+
+<!-- * lecture 7 -->
 
 ## Authentication
+
+<!-- * lecture 8 -->
