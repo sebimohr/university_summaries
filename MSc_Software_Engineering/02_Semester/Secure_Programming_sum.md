@@ -218,7 +218,56 @@ Mitigation strategies:
 
 ## Randomness
 
-<!-- 5 -->
+Used for creation of keys, nonces, initialisation vectors, salts, canaries, ...
+
+Randomness in computers:
+
+- Get data from an unpredictable hardware-source
+- Use numbers seed to create much larger number or subsequent pseudo-random-numbers
+- from real world
+   - quantum vacuum fluctuation
+   - radioactive decay
+   - photonoic emission
+   - outcome of qunatum measurement of equal probability
+
+### Security considerations
+
+Security issues with randomness:
+
+- Weak generation:
+   - WPS on cheap WIFI-APs
+   - Weak generation in programming (`rand()` in C & C++)
+- Manipulation:
+   - insecure standards (NSA manipulated RSA RNG-standard)
+   - manipulation of RNG in OS
+      - through malware
+      - hardware RNG manipulation
+- Special case: virtual machines
+   - source of entropy (Informationsdichte) not under control
+
+>Encryption needs a key of _good_ randomness.
+>Non randomness of RNG create most weaknesses of encryption.
+
+### Possible RNGs
+
+- Noncryptographic pseudo RNGs
+   - attacker could predict the output of such generators
+- Cryptographic pseudo-random number generators (CPRNGs)
+   - single secure seed $\rightarrow$ generate as many unguessable numbers as necessary
+   - secure for most use cases, but has to be **securely seeded**
+   - Sources:
+      - random infrastructure in OS:
+         - _Unix_: `/dev/random`
+         - _Windows_: `CryptGenRandom()`
+      - CPRNG systems like `cprng-aes` or `openssl`
+      - exteernal sources of random-numbers if applicable
+- Entropy harvesters
+   - try to gather entropy from other sources and present it directly, therefore sometimes _true_ RNG
+   - expected to bes seucre under most circumstances
+   - incredibly slow to produce data
+   - entropy data has to be postprocessed with cryptographic method to remove statistical bias
+- Quantum RNGs
+   - quantum mechanical random processes to generate random numbers
 
 ## Symmetric & Asymmetric Encryption
 
