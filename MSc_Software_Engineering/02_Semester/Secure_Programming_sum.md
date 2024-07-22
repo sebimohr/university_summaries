@@ -8,7 +8,7 @@ The goals of protection, which secure systems should achieve, are:
 
 1. **Confidentiality** Data must be kept confidental, stored encrypted and provided only to authorized clients
 1. **Integrity** Input validation, parity bit checking, cyclic redundancy check, cryptographic checking
-1. **Availability** "Measures of Nines", f.e. $four\ nines == 99.99\%$ availability
+1. **Availability** "Measures of Nines", f.e. _four nines ==_ $99.99\%$ availability
 1. **Non-repudiation**
 1. **Authenticity**
 1. **Privacy**
@@ -183,7 +183,7 @@ Solutions:
 Also always use safe options during coding:
 
 - `printf(string)` $\rightarrow$ `printf("%s", string)`
-- `fprintf(stderr, string)` $\rightarrow$ `fprintf(,stderr, "%s", string)`
+- `fprintf(stderr, string)` $\rightarrow$ `fprintf(stderr, "%s", string)`
 - `snprintf(puffer, sizeof(puffer), string)` $\rightarrow$ `snprintf(puffer, sizeof(puffer), "%s", string)`
 
 #### Integer
