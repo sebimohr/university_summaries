@@ -278,6 +278,7 @@ Security issues with randomness:
 Symmetric encryption by using a single key for encrypition and decryption.
 
 ![Private-Key Encryption](SPG_media/6_Private_Key_Encryption.png)
+_Private-Key Encryption_
 
 Cipher Types:
 
@@ -317,7 +318,14 @@ Possible MACs: OMAC, CMAC, HMAC
 
 ### Asymmetric Encryption
 
-<!-- * lecture 7 -->
+Key distribution is constant source of insecurity.
+Solution for this problem:
+
+1. Every person being part of the communication creates a pair of keys for en- & decryption.
+1. Personal encryption key get's shared between all members.
+1. Encryption of personal messages can be done by anyone, decryption can only be done with private key.
+
+This is called **Public Key Cryptogarphy**, where $K_e$ is the public and $K_d$ is the secret key.
 
 #### RSA
 
@@ -329,6 +337,26 @@ Possible MACs: OMAC, CMAC, HMAC
 1. Decryption: $P = C^d mod n$
 
 The pair $(n, e)$ is shared as the public key.
+
+#### Security considerations
+
+Types of attacks:
+
+- derive $K_d$ from $K_e$ (when $N$ from RSA can be factorized) $\rightarrow$ RSA is as secure as factorization
+- derive $m$ (message) from $c$ (ciphertext) $\rightarrow$ **RSA-Problem**
+- known plaintext attacks
+- timing attacks
+- sidechannel attacks
+
+#### Integrity
+
+Integrity is added through hashes:
+
+1. A function pair is determined: $S$ for hashing with $K_d$, $V$ for verfiying the hash with $K_e$
+1. Sender adds hash of $S(M,K_d)$ to encrypted message $C$
+1. Receiver proofs that the sender knows the private key through $V(C,S,K_e)$
+
+This is called **Digital Signature**.
 
 #### Digital Signature
 
