@@ -319,6 +319,126 @@ Possible MACs: OMAC, CMAC, HMAC
 
 <!-- * lecture 7 -->
 
+#### Digital Signature
+
+Signing Function:
+
+1. hash plaintext message
+1. encrypt hash with private key $K_d(p_1)$
+1. message with public key $K_e(p_2)$
+1. send encrypted message and encrypted hash to receiver
+1. decrypt message with $K_d(p_2)$, calculate hash
+1. decrypt transmitted hash with $K_e(p_1)$
+1. compare results
+
+Keys & Secrets can be exchanged through the **Diffie-Hellman Keyexchange**.
+
+#### Usage
+
+Private Key-Encryption is about 1000 times slower than symmetric encryption.
+It's mostly used to encrypt symmetric keys, which then can be transferred over insecure channels.
+
 ## Authentication
 
-<!-- * lecture 8 -->
+Proof, that you are the one that you claim to be.
+
+1. **Things you know**: passwords, PIN, passphrase, ...
+1. **Things you have**: ATM cards, ...
+1. **Things you are**: fingerprints, voice analysis, ...
+
+Requirements:
+
+- Practicality of deployment
+- Usability
+- Use across applications
+- Patents
+- Efficiency
+- Security
+- ...
+
+### Popular technologies
+
+- Password
+- PKI
+   - SSL certificate based checking
+   - public key exchange
+- Directory based mechanisms
+   - LDAP
+   - Kerberos
+- Bimoetric authentication
+
+#### Password checking
+
+Never send unencrypted passwords over the internet!
+
+![Password checking](SPG_media/8_Password_Checking.png)
+
+- agree on hashing / encryption algorithm prior to password exchange
+- use zero knowledge mechanisms (e.g. Fiat-Shamir-Feige)
+   - authentication through several steps
+   - involving computation of prime numbers, secret numbers, bits
+   - modulu operations to check authenticity
+
+#### PKI = Public Key Infrastrucutre
+
+Consists of:
+
+- **Certification Authority (CA)**: issues and signs certificates
+- **Registration Authority (RA)**: guarantees public key belongs to specific entity
+- **Directory Service**: distributes certificates and CRLs
+- **Validation Authority (VA)**: real-time validation of certificates
+
+Gets implemented by the Needham-Schroeder protocol:
+
+- authentication server communicates with the server
+- the server authenticates itself and the client it's communcating
+- authentication through secret and symmetric keys
+
+#### Directory services
+
+Directory services store personal information and can also be used to store authentication credentials.
+The most poular protocol is **LDAP**.
+
+#### Kerberos
+
+Client has to authenticate with an authentication server first.
+Next the ticket granting server grants the client a ticket, which he can use to communicate with a server
+in a certain timerframe.
+
+#### Single-Sign-On
+
+SAML-Protocol is used to exchange information between policy-enforcement- and policy-decision-points.
+
+XACML is used to specify access policies.
+
+Alternatives: OAuth and OpenID
+
+### Programming
+
+Secret information has to be kept out of source code.
+
+- changing secret information would be difficult
+- easy to attack by anyone who has the binary
+
+Alternatives:
+
+- Ask the user who is starting the binary $\rightarrow$ are access rights sufficient
+- Store secret in seperate file or database and secure that
+- Encrypt and ask user or OS for key
+- Use existing external mechanisms for authentication (LDAP, Kerberos, ...)
+- Use already existing credentials
+- Use hashing wherever useful $\rightarrow$ hashing is irreversible, salted hash is enough for authentication
+
+### Secret storing
+
+During execution, the secret can be found / stored in CPU, RAM and hard disk.
+
+After execution, the CPU storage is flushed, but the RAM storage has to be overwritten.
+
+After system shutdown, only the hard disk is a possible storage, but the RAM could be attacked by cold boot attacks.
+
+To be safe, make sure to **delete and overwrite memory** after secrets are not needed anymore.
+Also try to lock the address-space during execution,
+try to use further OS-based memory and process protection technologies.
+
+> If your OS is broken, everything is broken!
