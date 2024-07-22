@@ -319,6 +319,17 @@ Possible MACs: OMAC, CMAC, HMAC
 
 <!-- * lecture 7 -->
 
+#### RSA
+
+1. Key Generation:
+   - choose $p$ & $q$, $n = p * q$, $\phi(n) = (p-1)(q-1)$
+   - choose $1 < e < \phi(n)$, $gcd(e, \phi(n)) = 1$
+   - choose $d$, so that $(d*e) mod \phi(n) = 1$
+1. Encryption: $C = P^e mod n$
+1. Decryption: $P = C^d mod n$
+
+The pair $(n, e)$ is shared as the public key.
+
 #### Digital Signature
 
 Signing Function:
@@ -331,7 +342,11 @@ Signing Function:
 1. decrypt transmitted hash with $K_e(p_1)$
 1. compare results
 
-Keys & Secrets can be exchanged through the **Diffie-Hellman Keyexchange**.
+Keys & Secrets can be exchanged through the **Diffie-Hellman Keyexchange**:
+
+- choose prime numbers $p$ and $g$
+- Alice and Bob choose their own private keys $x$, compute public keys $X = g^x mod\ p$
+- Share $X(Alice)$ and $X(Bob)$, compute secret $s = X^x mod\ p$
 
 #### Usage
 
@@ -374,10 +389,12 @@ Never send unencrypted passwords over the internet!
 ![Password checking](SPG_media/8_Password_Checking.png)
 
 - agree on hashing / encryption algorithm prior to password exchange
-- use zero knowledge mechanisms (e.g. Fiat-Shamir-Feige)
-   - authentication through several steps
-   - involving computation of prime numbers, secret numbers, bits
-   - modulu operations to check authenticity
+- use zero knowledge mechanisms, e.g. Fiat-Shamir-Feige:
+   - $N = p * q$
+   - $v = s^2 mod N$ (Pair **(v,N)** is the public key of A)
+   - $x = r^2 mod N$, send $x$ to B
+   - B sends bit to A, if bit == 0 respond $r$, else $y = (r * s) mod N$
+   - B checks response by calculating it reverse
 
 #### PKI = Public Key Infrastrucutre
 
