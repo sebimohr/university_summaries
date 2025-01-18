@@ -1,0 +1,21 @@
+[submodule "BSc_Computer_Science/07_Semester/ds_twitter_sentiment_analyzer"]
+	path = BSc_Computer_Science/07_Semester/ds_twitter_sentiment_analyzer
+	url = git@github.com:sebimohr/ds_twitter_sentiment_analyzer.git
+[submodule "BSc_Computer_Science/07_Semester/artistAgency"]
+	path = BSc_Computer_Science/07_Semester/artistAgency
+	url = git@github.com:sebimohr/artistAgency.git
+[submodule "BSc_Computer_Science/04_Semester/coogit"]
+	path = BSc_Computer_Science/04_Semester/coogit
+	url = git@github.com:tobibrunner/coogit.git
+[submodule "MSc_Software_Engineering_MU/CS603_projects/ise_conference_management_system_frontend"]
+	path = MSc_Software_Engineering_MU/CS615_project/ise_conference_management_system_frontend
+	url = git@github.com:sebimohr/ise_conference_management_system_frontend.git
+[submodule "MSc_Software_Engineering_MU/CS603_projects/mu_rp_project_dafny"]
+	path = MSc_Software_Engineering_MU/CS603_projects/mu_rp_project_dafny
+	url = git@github.com:sebimohr/mu_rp_project_dafny.git
+[submodule "MSc_Software_Engineering_MU/CS603_projects/mu_rp_project_spin"]
+	path = MSc_Software_Engineering_MU/CS603_projects/mu_rp_project_spin
+	url = git@github.com:sebimohr/mu_rp_project_spin.git
+[submodule "MSc_Software_Engineering/02_Semester/WIS/53f58c98a51f3e2b45521f0ee9baeeef"]
+	path = MSc_Software_Engineering/02_Semester/WIS/53f58c98a51f3e2b45521f0ee9baeeef
+	url = git@gist.github.com:53f58c98a51f3e2b45521f0ee9baeeef.git
