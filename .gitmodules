@@ -19,3 +19,6 @@
 [submodule "MSc_Software_Engineering/02_Semester/WIS/53f58c98a51f3e2b45521f0ee9baeeef"]
 	path = MSc_Software_Engineering/02_Semester/WIS/53f58c98a51f3e2b45521f0ee9baeeef
 	url = git@gist.github.com:53f58c98a51f3e2b45521f0ee9baeeef.git
+[submodule "MSc_Software_Engineering/03_Semester/DCO/MIN4_dco_labunits"]
+	path = MSc_Software_Engineering/03_Semester/DCO/MIN4_dco_labunits
+	url = git@github.com:sebimohr/MIN4_dco_labunits.git
