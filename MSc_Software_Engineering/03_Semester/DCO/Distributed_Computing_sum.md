@@ -7,16 +7,16 @@
 #### Evaluation Strategies
 
 - Call by value:
-  - An expression is reduced to values before the function is called (e.g.: `2 + 3 => 5`)
-  - Use when arguments are simple and don't involve complex computations
-  - More efficient
-  - Scala syntax: `def callByValue(x: Int) {...}`
-  - `val` is always call by value
+   - An expression is reduced to values before the function is called (e.g.: `2 + 3 => 5`)
+   - Use when arguments are simple and don't involve complex computations
+   - More efficient
+   - Scala syntax: `def callByValue(x: Int) {...}`
+   - `val` is always call by value
 - Call by name:
-  - An expression is evaluated every time it is used within the function (e.g.: `2 + 3 => 2 + 3`)
-  - Use when the evaluation of an argument should be delayed or might not be used at all
-  - Scala syntax: `def callByName(x: => Int) {...}`
-  - `def` is always call by name
+   - An expression is evaluated every time it is used within the function (e.g.: `2 + 3 => 2 + 3`)
+   - Use when the evaluation of an argument should be delayed or might not be used at all
+   - Scala syntax: `def callByName(x: => Int) {...}`
+   - `def` is always call by name
 
 #### Currying
 
@@ -68,21 +68,21 @@ Parallell components, concurrent execution threads, on phyisically distributed h
 
 - Parallelism:
 
-  - Collections
-  - (Parallel) Streams
-  - Execution
+   - Collections
+   - (Parallel) Streams
+   - Execution
 
 - Concurrency:
 
-  - Threads
-  - Actors
-  - Futures
+   - Threads
+   - Actors
+   - Futures
 
 - Distribution:
 
-  - Clustering
-  - Sharding
-  - Streaming
+   - Clustering
+   - Sharding
+   - Streaming
 
 ## ForkJoin Computation
 
