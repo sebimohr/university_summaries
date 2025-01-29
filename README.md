@@ -29,6 +29,9 @@ Please note that they may be outdated.
       - _Secure Programming_
       - _Wissenschaftliches Seminar / WIS_
          - Includes paper, poster and sources
+   - 03_Semester:
+      - _Distributed Computing_
+         - Includes lab unit solutions
 - **Maynooth University 2024**: MSc Software Engineering (Erasmus Exchange Semester)
    - _Rigorous Process (CS603)_
       - Projects can be found in `CS603_projects`
